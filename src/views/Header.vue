@@ -21,10 +21,10 @@
                 <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
               </li>
               <li class="checkout">
-                <a href="#">
+                <router-link to="/single">
                   <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                  <span id="checkout_items" class="checkout_items">2</span>
-                </a>
+                  <span id="checkout_items" class="checkout_items">{{cartQuantity}}</span>
+                </router-link>
               </li>
             </ul>
             <div class="hamburger_container">

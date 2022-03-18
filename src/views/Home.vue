@@ -48,7 +48,7 @@
                     justify-content-center
                     align-items-center
                   "
-                  data-filter=".Fashionable bag"
+                  data-filter=".Fasionable"
                 >
                   Fashionable bag
                 </li>
@@ -117,174 +117,27 @@
               <!-- Product -->
 
               <div v-for="(item, id) in product" :key="id">
-                <div class="product-item men">{{ item.key }}</div>
-                <div class="product_image">{{ item.image }}</div>
-                <div class="product_info">
-                  <div class="product_name">{{ item.name }}</div>
-                  <div class="product_price">{{item.price}}</div>
+                <div class="product-item" v-bind:class="item.key">
+                  <div class="product product_filter">
+                    <div class="product_image">
+                      <img v-bind:src="item.image" />
+                    </div>
+                    <div>
+                      <div class="product_info">
+                        <h6 class="product_name">
+                          <router-link to="/single">{{
+                            item.name
+                          }}</router-link>
+                        </h6>
+                        <div class="product_price">{{ item.price }}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <btn class="red_button add_to_cart_button">
+                    <a href="#">add to cart</a>
+                  </btn>
                 </div>
               </div>
-              <!-- Product 2 -->
-
-              <!-- <div class="product-item Specialties">
-                <div class="product product_filter">
-                  <div class="product_image">
-                    <img src="image/product_2.png" alt="" />
-                  </div>
-                  <div class="favorite"></div>
-                  <div
-                    class="
-                      product_bubble product_bubble_left product_bubble_green
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <span>new</span>
-                  </div>
-                  <div class="product_info">
-                    <h6 class="product_name">
-                      <a href="single.html"
-                        >Samsung CF591 Series Curved 27-Inch FHD Monitor</a
-                      >
-                    </h6>
-                    <div class="product_price">$610.00</div>
-                  </div>
-                </div>
-                <div class="red_button add_to_cart_button">
-                  <a href="#">add to cart</a>
-                </div>
-              </div> -->
-
-              <!-- Product 4 -->
-
-              <!-- <div class="product-item accessories">
-                <div class="product product_filter">
-                  <div class="product_image">
-                    <img src="image/product_4.png" alt="" />
-                  </div>
-                  <div
-                    class="
-                      product_bubble product_bubble_right product_bubble_red
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <span>sale</span>
-                  </div>
-                  <div class="favorite favorite_left"></div>
-                  <div class="product_info">
-                    <h6 class="product_name">
-                      <a href="single.html"
-                        >DYMO LabelWriter 450 Turbo Thermal Label Printer</a
-                      >
-                    </h6>
-                    <div class="product_price">$410.00</div>
-                  </div>
-                </div>
-                <div class="red_button add_to_cart_button">
-                  <a href="#">add to cart</a>
-                </div>
-              </div> -->
-
-              <!-- Product 5 -->
-
-              <!-- <div class="product-item women men">
-                <div class="product product_filter">
-                  <div class="product_image">
-                    <img src="image/product_5.png" alt="" />
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name">
-                      <a href="single.html"
-                        >Pryma Headphones, Rose Gold & Grey</a
-                      >
-                    </h6>
-                    <div class="product_price">$180.00</div>
-                  </div>
-                </div>
-                <div class="red_button add_to_cart_button">
-                  <a href="#">add to cart</a>
-                </div>
-              </div> -->
-
-              <!-- Product 8 -->
-
-              <!-- <div class="product-item accessories">
-                <div class="product product_filter">
-                  <div class="product_image">
-                    <img src="image/product_8.png" alt="" />
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name">
-                      <a href="single.html"
-                        >Blue Yeti USB Microphone Blackout Edition</a
-                      >
-                    </h6>
-                    <div class="product_price">$120.00</div>
-                  </div>
-                </div>
-                <div class="red_button add_to_cart_button">
-                  <a href="#">add to cart</a>
-                </div>
-              </div> -->
-
-              <!-- Product 9 -->
-
-              <!-- <div class="product-item men">
-                <div class="product product_filter">
-                  <div class="product_image">
-                    <img src="image/product_9.png" alt="" />
-                  </div>
-                  <div
-                    class="
-                      product_bubble product_bubble_right product_bubble_red
-                      d-flex
-                      flex-column
-                      align-items-center
-                    "
-                  >
-                    <span>sale</span>
-                  </div>
-                  <div class="favorite favorite_left"></div>
-                  <div class="product_info">
-                    <h6 class="product_name">
-                      <a href="single.html"
-                        >DYMO LabelWriter 450 Turbo Thermal Label Printer</a
-                      >
-                    </h6>
-                    <div class="product_price">$410.00</div>
-                  </div>
-                </div>
-                <div class="red_button add_to_cart_button">
-                  <a href="#">add to cart</a>
-                </div>
-              </div> -->
-
-              <!-- Product 10 -->
-
-              <!-- <div class="product-item men">
-                <div class="product product_filter">
-                  <div class="product_image">
-                    <img src="image/product_10.png" alt="" />
-                  </div>
-                  <div class="favorite"></div>
-                  <div class="product_info">
-                    <h6 class="product_name">
-                      <a href="single.html"
-                        >Pryma Headphones, Rose Gold & Grey</a
-                      >
-                    </h6>
-                    <div class="product_price">$180.00</div>
-                  </div>
-                </div>
-                <div class="red_button add_to_cart_button">
-                  <a href="#">add to cart</a>
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -720,6 +573,7 @@
 <script>
 import Header from "@/views/Header";
 import Footer from "@/views/Footer";
+import { mapActions , mapState} from "vuex";
 
 export default {
   name: "Home",
@@ -729,13 +583,25 @@ export default {
     Footer,
   },
 
-  data(){
-    return {
-      product: [
-        {key: "", image: "", name: "", price: ""},
-      ]
-    }
-  }
+  props: ["product"],
+  computed:{
+    ...mapState({
+      Fasionable: state => state.Fasionable,
+    })
+  },
+  mounted() {
+    console.log(this.Fasionable, ' test')
+  },
+
+  methods: {
+    ...mapActions(["addProduct", "currentProduct"]),
+    addProductToCart(item) {
+      this.addProduct(item);
+    },
+    addCurrentProduct(item) {
+      this.currentProduct(item);
+    },
+  },
 };
 </script>
 
