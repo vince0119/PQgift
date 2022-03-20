@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Header -->
-    <Header :list_product="this.product" :itemsAdd="this.itemsAdd"></Header>
+    <Header :cart="this.cart"></Header>
 
     <!-- New Arrivals -->
     <div class="new_arrivals">
@@ -115,8 +115,8 @@
               data-isotope='{ "itemSelector": ".product-item", "layoutMode": "fitRows" }'
             >
               <!-- Product -->
-              <div v-for="(item, id) in product" :key="id">
-                <Item :list_item="item" @add-shop-cart="addCart"></Item>
+              <div>
+                <Item v-for="(item, id) in product" :key="id" :item="item"  @add-shop-cart="addProductToCart"></Item>
               </div>
             </div>
           </div>
@@ -210,44 +210,28 @@ export default {
         {key: "Specialties", image: 'image/Squid rolls.PNG', name: "Squid rolls", price: "₫65.000"},
         {key: "Specialties", image: 'image/Vang ancohol.jpg', name: "Vang ancohol", price: "₫20.000"},
       ],
-      itemsAdd: [],
+      cart: [],
     };
-  },
-  watch: {
-    // itemsAdd() {
-    //   console.log(this.itemsAdd)
-    // }
   },
 
   methods: {
-      addProductToCart(product) {
-        this.itemsAdd.push(product)
-      },
-
-      submit(){
+      addProductToCart(item) {
         var existingEntries = JSON.parse(localStorage.getItem("myCart"));
-
         if(existingEntries == null) existingEntries = [];
-
-        var entry = {
-          key: this.key,
-          image: this.image,
-          name: this.name,
-          price: this.price,
-        }
-        localStorage.setItem("myCart", JSON.stringify(existingEntries));
-
-        console.log('mycart', JSON.parse(localStorage.getItem('myCart')));
+      
+        localStorage.setItem("latestItem", JSON.stringify(item));
         
-        this.itemsAdd = JSON.parse(localStorage.getItem('myCart'));
-      }
+        // Save allEntries back to local storage
+        existingEntries.push(item);
+        localStorage.setItem("myCart", JSON.stringify(existingEntries));
+        this.cart = JSON.parse(localStorage.getItem('myCart'));
+        // this.cartItems = JSON.parse(localStorage.getItem('myCart')); lay gia tri
+      },
     },
-    addCart(item) {
-      console.log(item, 'test')
-    }
 };
 </script>
 
 <style>
 @import "../assets/main_styles.css";
 </style>
+
