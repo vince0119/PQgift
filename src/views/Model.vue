@@ -50,6 +50,8 @@ export default {
     box-sizing: border-box;
     padding: 1em .5em;
     position: absolute;
+    left: -300px;
+    top: 75px;
     z-index: 1;
   }
   .box:after {

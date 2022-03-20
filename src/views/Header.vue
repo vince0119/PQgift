@@ -26,19 +26,8 @@
               <li class="checkout">
                 <a href="#">
                   <span id="checkout_items" class="checkout_items">{{ total }}</span>
-                  <btn class="fa fa-shopping-cart" aria-hidden="true">
-                    <!-- <div class="box">
-                      <span v-if="!hasProduct()">No products</span>
-                      <div
-                        v-for="(item, index) in cartItems"
-                        :key="index"
-                        class="box-item"
-                      >
-                        <h3 class="item-name">{{ item.name }}</h3>
-                        <span class="item-price">{{ item.price }}</span>
-                      </div>
-                      <div class="cart-info" v-if="hasProduct()"></div>
-                    </div> -->
+                  <btn class="fa fa-shopping-cart" aria-hidden="true" @click="showPopupCart(item)">
+                    <Modal :cartItems="this.cartItems" @click="showPopupCart()"></Modal>
                   </btn>
                 </a>
               </li>
@@ -54,52 +43,53 @@
 </template>
 
 <script>
-import Modal from "@/views/Model.vue";
+
+import Modal from '@/views/Model.vue'
 
 export default {
   name: "Header",
 
-  components: {
-    Modal,
+  components:{
+    Modal
   },
-
-  data() {
-    return {
+  
+  data(){
+    return{
       cartItems: [],
-      total: 0,
-    };
+      total: 0
+    }
   },
 
   props: {
-    cart: [],
+    cart: []
   },
 
   computed: {
     total() {
-      this.cartItems = JSON.parse(localStorage.getItem("myCart"));
-      if (this.cartItems == null) {
-        return 0;
+      this.cartItems =  JSON.parse(localStorage.getItem('myCart'))
+      if(this.cartItems == null ) {
+        return 0
       }
-      return this.cartItems.length;
+      return this.cartItems.length
     },
-    showPopupCart() {},
+    showPopupCart(cartItems){
+      this.$emit('show-popup',cartItems)
+    }
   },
 
-  mounted() {
-    console.log(this.cartItems, "item");
+  mounted(){
+    console.log(this.cartItems,'item')
   },
 
-  watch: {
+  watch:{
     cart() {
-      this.cartItems = JSON.parse(localStorage.getItem("myCart"));
-    },
+      this.cartItems = JSON.parse(localStorage.getItem('myCart'));
+    }
   },
 
-  methods: {
-    calcPrice(item) {
-      return parseFloat(
-        parseFloat(item.price).toFixed(2) * item.quantity
-      ).toFixed(2);
+  methods:{
+    calcPrice(item){
+      return parseFloat(parseFloat(item.price).toFixed(2) * item.quantity).toFixed(2);
     },
   },
 };
