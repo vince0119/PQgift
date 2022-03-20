@@ -1,6 +1,5 @@
 import { createWebHistory, createRouter } from "vue-router";
 import Home from "../views/Home.vue";
-import Single from '@/views/Single'
 
 const routes = [
   {
@@ -8,12 +7,6 @@ const routes = [
     name: "Home",
     component: Home
   },
-  {
-    path: '/single',
-    name: 'single',
-    component: Single,
-  },
-  
   
 ];
 
