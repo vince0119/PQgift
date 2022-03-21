@@ -75,10 +75,6 @@ export default {
     },
   },
 
-  mounted() {
-    console.log(this.cartItems, "item");
-  },
-
   watch: {
     cart() {
       this.cartItems = JSON.parse(localStorage.getItem("myCart"));

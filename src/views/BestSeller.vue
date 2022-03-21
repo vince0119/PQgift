@@ -18,7 +18,7 @@
                 <div class="product-item women">
                   <div class="product">
                     <div class="product_image">
-                      <img src="image/product_2.png" alt="" />
+                      <img src="image/Black ancohol.jpeg" alt="" />
                     </div>
                     <div class="favorite"></div>
                     <div
@@ -33,11 +33,11 @@
                     </div>
                     <div class="product_info">
                       <h6 class="product_name">
-                        <a href="single.html"
-                          >Samsung CF591 Series Curved 27-Inch FHD Monitor</a
+                        <a href="/#"
+                          >Black ancohol</a
                         >
                       </h6>
-                      <div class="product_price">$610.00</div>
+                      <div class="product_price">₫365.000</div>
                     </div>
                   </div>
                 </div>
@@ -49,7 +49,7 @@
                 <div class="product-item accessories">
                   <div class="product">
                     <div class="product_image">
-                      <img src="image/product_4.png" alt="" />
+                      <img src="image/Brocade crossbody bag ver1.png" alt="" />
                     </div>
                     <div
                       class="
@@ -64,11 +64,11 @@
                     <div class="favorite favorite_left"></div>
                     <div class="product_info">
                       <h6 class="product_name">
-                        <a href="single.html"
-                          >DYMO LabelWriter 450 Turbo Thermal Label Printer</a
+                        <a href="#"
+                          >Brocade crossbody bag ver1</a
                         >
                       </h6>
-                      <div class="product_price">$410.00</div>
+                      <div class="product_price">₫169.000</div>
                     </div>
                   </div>
                 </div>
@@ -80,16 +80,16 @@
                 <div class="product-item women men">
                   <div class="product">
                     <div class="product_image">
-                      <img src="image/product_5.png" alt="" />
+                      <img src="/image/Dolphin pearl keychain .PNG" alt="" />
                     </div>
                     <div class="favorite"></div>
                     <div class="product_info">
                       <h6 class="product_name">
-                        <a href="single.html"
-                          >Pryma Headphones, Rose Gold & Grey</a
+                        <a href="/#"
+                          >Dolphin pearl keychain</a
                         >
                       </h6>
-                      <div class="product_price">$180.00</div>
+                      <div class="product_price">₫60.000</div>
                     </div>
                   </div>
                 </div>
@@ -101,7 +101,7 @@
                 <div class="product-item accessories">
                   <div class="product discount">
                     <div class="product_image">
-                      <img src="image/product_6.png" alt="" />
+                      <img src="image/seashell starfish keychain .PNG" alt="" />
                     </div>
                     <div class="favorite favorite_left"></div>
                     <div
@@ -112,16 +112,16 @@
                         align-items-center
                       "
                     >
-                      <span>-$20</span>
+                      <span>-₫217.000</span>
                     </div>
                     <div class="product_info">
                       <h6 class="product_name">
-                        <a href="single.html"
-                          >Fujifilm X100T 16 MP Digital Camera (Silver)</a
+                        <a href="#"
+                          >seashell starfish keychain</a
                         >
                       </h6>
                       <div class="product_price">
-                        $520.00<span>$590.00</span>
+                        ₫315.000<span>₫590.00</span>
                       </div>
                     </div>
                   </div>
@@ -134,16 +134,16 @@
                 <div class="product-item accessories">
                   <div class="product">
                     <div class="product_image">
-                      <img src="image/product_8.png" alt="" />
+                      <img src="image/sea turtle pearl keychain.PNG" alt="" />
                     </div>
                     <div class="favorite"></div>
                     <div class="product_info">
                       <h6 class="product_name">
-                        <a href="single.html"
-                          >Blue Yeti USB Microphone Blackout Edition</a
+                        <a href="#"
+                          >sea turtle pearl keychain</a
                         >
                       </h6>
-                      <div class="product_price">$120.00</div>
+                      <div class="product_price">₫34.000</div>
                     </div>
                   </div>
                 </div>
@@ -155,7 +155,7 @@
                 <div class="product-item men">
                   <div class="product">
                     <div class="product_image">
-                      <img src="image/product_9.png" alt="" />
+                      <img src="image/Brown bow hat ver1.PNG" alt="" />
                     </div>
                     <div
                       class="
@@ -170,11 +170,11 @@
                     <div class="favorite favorite_left"></div>
                     <div class="product_info">
                       <h6 class="product_name">
-                        <a href="single.html"
-                          >DYMO LabelWriter 450 Turbo Thermal Label Printer</a
+                        <a href="#"
+                          >Brown bow hat ver1</a
                         >
                       </h6>
-                      <div class="product_price">$410.00</div>
+                      <div class="product_price">₫159.000</div>
                     </div>
                   </div>
                 </div>
@@ -186,16 +186,16 @@
                 <div class="product-item men">
                   <div class="product">
                     <div class="product_image">
-                      <img src="image/product_10.png" alt="" />
+                      <img src="image/Clamshell silver bracelet.png" alt="" />
                     </div>
                     <div class="favorite"></div>
                     <div class="product_info">
                       <h6 class="product_name">
-                        <a href="single.html"
-                          >Pryma Headphones, Rose Gold & Grey</a
+                        <a href="#"
+                          >Clamshell silver bracelet</a
                         >
                       </h6>
-                      <div class="product_price">$180.00</div>
+                      <div class="product_price">₫514.000</div>
                     </div>
                   </div>
                 </div>
@@ -234,7 +234,17 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Best",
+  props:{
+    product:{
+      default:{}
+    }
+  },
+  mounted(){
+    console.log(this.product,'yyyyyyyyyyyyy')
+  },
+};
 </script>
 
 <style>

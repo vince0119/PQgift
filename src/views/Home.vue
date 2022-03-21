@@ -127,7 +127,7 @@
     <!-- Deal of the week -->
     <deal-week></deal-week>
     <!-- Best Seller -->
-    <best-seller></best-seller>
+    <best-seller :product="this.product"></best-seller>
     <!-- Benefit -->
     <benefit></benefit>
     <!-- Newsletter -->
