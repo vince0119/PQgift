@@ -24,11 +24,12 @@
                 <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
               </li>
               <li class="checkout">
-                <a href="#">
+                <a href="#" @click="changeCheckout">
+                  <div>
+                  <span class="fa fa-shopping-cart"></span>
                   <span id="checkout_items" class="checkout_items">{{ total }}</span>
-                  <btn class="fa fa-shopping-cart" aria-hidden="true" @click="showPopupCart(item)">
-                    <Modal :cartItems="this.cartItems" @click="showPopupCart()"></Modal>
-                  </btn>
+                  </div>
+                  <Modal v-if="this.check == true" :cartItems="this.cartItems"></Modal>
                 </a>
               </li>
             </ul>
@@ -43,60 +44,80 @@
 </template>
 
 <script>
-
-import Modal from '@/views/Model.vue'
+import Modal from "@/views/Model.vue";
 
 export default {
   name: "Header",
 
-  components:{
-    Modal
+  components: {
+    Modal,
   },
-  
-  data(){
-    return{
+
+  data() {
+    return {
       cartItems: [],
-      total: 0
-    }
+      total: 0,
+      check: false,
+    };
   },
 
   props: {
-    cart: []
+    cart: [],
   },
 
   computed: {
     total() {
-      this.cartItems =  JSON.parse(localStorage.getItem('myCart'))
-      if(this.cartItems == null ) {
-        return 0
+      this.cartItems = JSON.parse(localStorage.getItem("myCart"));
+      if (this.cartItems == null) {
+        return 0;
       }
-      return this.cartItems.length
+      return this.cartItems.length;
     },
-    showPopupCart(cartItems){
-      this.$emit('show-popup',cartItems)
-    }
   },
 
-  mounted(){
-    console.log(this.cartItems,'item')
+  mounted() {
+    console.log(this.cartItems, "item");
   },
 
-  watch:{
+  watch: {
     cart() {
-      this.cartItems = JSON.parse(localStorage.getItem('myCart'));
-    }
+      this.cartItems = JSON.parse(localStorage.getItem("myCart"));
+    },
   },
 
-  methods:{
-    calcPrice(item){
-      return parseFloat(parseFloat(item.price).toFixed(2) * item.quantity).toFixed(2);
+  methods: {
+    changeCheckout() {
+      this.check = !this.check;
+    },
+    showModal() {
+      let element = this.$refs.Modal.$el;
+      $(element).Modal("show");
+    },
+    calcPrice(item) {
+      return parseFloat(
+        parseFloat(item.price).toFixed(2) * item.quantity
+      ).toFixed(2);
     },
   },
 };
 </script>
 
-<style>
-.form-control mr-sm-2 {
+<style scoped>
+/* .form-control mr-sm-2 {
   width: 500px;
 }
+.box {
+  width: 400px;
+  height: auto;
+  background-color: #fafafa;
+  box-shadow: 0px 0px 10px rgba(73, 74, 78, 0.1);
+  border-radius: 5px;
+  box-sizing: border-box;
+  padding: 1em 0.5em;
+  position: absolute;
+  left: -300px;
+  top: 75px;
+  z-index: 1;
+} */
+@import "../assets/bootstrap.min.css";
 </style>
