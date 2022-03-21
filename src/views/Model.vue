@@ -29,21 +29,22 @@
             >
               <div class="col-8 px-1 d-flex flex-column">
                 <div>
-                  <span style="font-size: 14px" class="text-muted">
+                  <span style="font-size: 14px; position: relative; right: 15px" class="text-muted">
                     {{ item.name }}
                   </span>
                 </div>
                 <div>
-                  <span style="font-size: 15px; position: relative; left: 174px; top: -25px;" class="text-muted">
+                  <span style="font-size: 15px; position: relative; left: 130px; top: -25px;" class="text-muted">
                     {{ item.price }}
                   </span>
                 </div>
-              </div>
-              <div class="col-1 px-1">
-                <span @click="deleteItem(item, index)">
-                  <img src="/assets/icon-delete.svg" alt="" />
+                <div class="col-1 px-1" style="position: relative; left: 290px; top: -51px;">
+                <span @click="this.deleteItem(item, index)">
+                  <img src="image/icon-delete.svg" alt="" />
                 </span>
               </div>
+              </div>
+              
             </div>
           </div>
           <div v-else>
@@ -92,9 +93,10 @@ export default {
       }
       return this.cartItems.length;
     },
-    // showPopupCart() {
-    //   this.showOrHiddenPopupCart();
-    // },
+    deleteItem(item, index) {
+      this.cartItems.splice(index, 1);
+      localStorage.setItem('myCart', JSON.stringify(this.cartItems));
+    },
   },
 
 };

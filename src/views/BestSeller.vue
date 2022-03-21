@@ -241,9 +241,6 @@ export default {
       default:{}
     }
   },
-  mounted(){
-    console.log(this.product,'yyyyyyyyyyyyy')
-  },
 };
 </script>
 

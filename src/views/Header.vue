@@ -24,9 +24,9 @@
                 <a href="#"><i class="fa fa-user" aria-hidden="true"></i></a>
               </li>
               <li class="checkout">
-                <a href="#" @click="changeCheckout">
+                <a href="#" >
                   <div>
-                  <span class="fa fa-shopping-cart"></span>
+                  <span class="fa fa-shopping-cart" @click="changeCheckout"></span>
                   <span id="checkout_items" class="checkout_items">{{ total }}</span>
                   </div>
                   <Modal v-if="this.check == true" :cartItems="this.cartItems"></Modal>
@@ -84,10 +84,6 @@ export default {
   methods: {
     changeCheckout() {
       this.check = !this.check;
-    },
-    showModal() {
-      let element = this.$refs.Modal.$el;
-      $(element).Modal("show");
     },
     calcPrice(item) {
       return parseFloat(
