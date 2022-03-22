@@ -95,21 +95,5 @@ export default {
 </script>
 
 <style scoped>
-/* .form-control mr-sm-2 {
-  width: 500px;
-}
-.box {
-  width: 400px;
-  height: auto;
-  background-color: #fafafa;
-  box-shadow: 0px 0px 10px rgba(73, 74, 78, 0.1);
-  border-radius: 5px;
-  box-sizing: border-box;
-  padding: 1em 0.5em;
-  position: absolute;
-  left: -300px;
-  top: 75px;
-  z-index: 1;
-} */
 @import "../assets/bootstrap.min.css";
 </style>

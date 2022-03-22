@@ -1,10 +1,11 @@
 <template>
   <b-dropdown
-    size="xl" variant="link" toggle-class="text-decoration-none" no-caret right
-    style="position: absolute;
-    top: 100%;
-    right: -30px;
-    z-index: 99;"
+    size="xl"
+    variant="link"
+    toggle-class="text-decoration-none"
+    no-caret
+    right
+    style="position: absolute; top: 100%; right: -30px; z-index: 99"
   >
     <div
       style="
@@ -15,9 +16,10 @@
       "
     >
       <div class="d-flex flex-column">
-        <div class="col-12 p-3 border-bottom" 
-        style="border-bottom: 1px solid #dee2e6!important;
-    text-align: left">
+        <div
+          class="col-12 p-3 border-bottom"
+          style="border-bottom: 1px solid #dee2e6 !important; text-align: left"
+        >
           <span style="font-weight: 700"> Cart </span>
         </div>
         <div class="col-12 px-1 mt-3" style="max-height: 200px; overflow: auto">
@@ -27,24 +29,46 @@
               :key="index"
               class="d-flex flex-row justify-content-between my-3"
             >
+              <div class="col-3 px-0 text-center">
+                <img
+                  :src="item.image"
+                  alt="product Image"
+                  width="70%"
+                  height="50px"
+                  style="object-fit: cover; border-radius: 10px"
+                />
+              </div>
               <div class="col-8 px-1 d-flex flex-column">
                 <div>
-                  <span style="font-size: 14px; position: relative; right: 15px" class="text-muted">
+                  <span
+                    style="font-size: 14px; position: relative; right: 15px"
+                    class="text-muted"
+                  >
                     {{ item.name }}
                   </span>
                 </div>
                 <div>
-                  <span style="font-size: 15px; position: relative; left: 130px; top: -25px;" class="text-muted">
+                  <span
+                    style="
+                      font-size: 15px;
+                      position: relative;
+                      left: 130px;
+                      top: -25px;
+                    "
+                    class="text-muted"
+                  >
                     {{ item.price }}
                   </span>
                 </div>
-                <div class="col-1 px-1" style="position: relative; left: 290px; top: -51px;">
-                <span @click="this.deleteItem(item, index)">
-                  <img src="image/icon-delete.svg" alt="" />
-                </span>
+                <div
+                  class="col-1 px-1"
+                  style="position: relative; left: 290px; top: -51px"
+                >
+                  <span @click="this.deleteItem(item, index)">
+                    <img src="image/icon-delete.svg" alt="" />
+                  </span>
+                </div>
               </div>
-              </div>
-              
             </div>
           </div>
           <div v-else>
@@ -95,10 +119,9 @@ export default {
     },
     deleteItem(item, index) {
       this.cartItems.splice(index, 1);
-      localStorage.setItem('myCart', JSON.stringify(this.cartItems));
+      localStorage.setItem("myCart", JSON.stringify(this.cartItems));
     },
   },
-
 };
 </script>
 

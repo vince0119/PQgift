@@ -112,7 +112,7 @@
                         align-items-center
                       "
                     >
-                      <span>-₫217.000</span>
+                      <span>-20%</span>
                     </div>
                     <div class="product_info">
                       <h6 class="product_name">
