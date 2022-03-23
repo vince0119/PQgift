@@ -1,5 +1,6 @@
 <template>
-  <nav aria-label="Page navigation example">
+<h1></h1>
+  <!-- <nav aria-label="Page navigation example">
     <ul class="pagination">
       <li class="page-item"><a class="page-link" href="#">Previous</a></li>
       <li :class="{'disabled': n == this.pageOfItems}" v-for="(n, idx) in totalPage" :key="idx" class="page-item" >
@@ -7,7 +8,7 @@
       </li>
       <li class="page-item"><a class="page-link" href="#">Next</a></li>
     </ul>
-  </nav>
+  </nav> -->
 </template>
 
 <script>

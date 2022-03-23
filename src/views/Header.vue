@@ -46,6 +46,7 @@
 <script>
 import Modal from "@/views/Model.vue";
 
+
 export default {
   name: "Header",
 
@@ -55,14 +56,22 @@ export default {
 
   data() {
     return {
+      list:[Object.values(this.cart)],
       cartItems: [],
       total: 0,
       check: false,
     };
   },
 
+  mounted() {
+    console.log(this.cart, ' data')
+    // data.forEach(element => console.log(element));
+    
+  },
+
+
   props: {
-    cart: [],
+    cart: []
   },
 
   computed: {
@@ -95,5 +104,4 @@ export default {
 </script>
 
 <style scoped>
-@import "../assets/bootstrap.min.css";
 </style>

@@ -5,7 +5,9 @@
     toggle-class="text-decoration-none"
     no-caret
     right
-    style="position: absolute; top: 100%; right: -30px; z-index: 99"
+    style="position: absolute; top: 100%; right: -30px
+    ; z-index: 99
+    "
   >
     <div
       style="
@@ -31,7 +33,7 @@
             >
               <div class="col-3 px-0 text-center">
                 <img
-                  :src="item.image"
+                  :src="item.imgLink"
                   alt="product Image"
                   width="70%"
                   height="50px"
@@ -44,7 +46,7 @@
                     style="font-size: 14px; position: relative; right: 15px"
                     class="text-muted"
                   >
-                    {{ item.name }}
+                    {{ item.productName }}
                   </span>
                 </div>
                 <div>
@@ -57,7 +59,7 @@
                     "
                     class="text-muted"
                   >
-                    {{ item.price }}
+                    {{ item.unitPrice }}
                   </span>
                 </div>
                 <div
@@ -108,6 +110,10 @@ export default {
 
   props: {
     cartItems: Array,
+  },
+
+  mounted(){
+    // console.log(this.cartItems,)
   },
 
   methods: {
